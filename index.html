@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Material Icons -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Site do Gugu</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="profile">
+                <img src="sua-foto.jpeg" alt="Foto de Perfil">
+            </div>
+            <h1>eeojaapaa</h1>
+            <p><strong>Criador de Conteúdo</strong></p>
+            <div class="links">
+                <a href="https://www.roblox.com/users/4904745451/profile" class="link">
+                    <img src="./roblox-logo.png" alt="Roblox" class="logo">
+                </a>
+                <a href="https://www.tiktok.com/@eeoojaapaa" class="link">
+                    <img src="tiktok-logo.png" alt="TikTok" class="logo">
+                </a>
+            </div>
+            <p class="bio">Sou apaixonado por criar e compartilhar conteúdos incríveis!</p>
+            <div class="contact">
+                <div class="email">
+                    <span class="material-icons email-icon">email</span>
+                    <p id="email">gustavogiranda019@gmail.com</p>
+                    <button onclick="copyEmail()" class="copy-button">
+                        <span class="material-icons copy-icon">content_copy</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function copyEmail() {
+            const email = document.getElementById('email').innerText;
+            navigator.clipboard.writeText(email).then(() => {
+                alert("Email copiado: " + email);
+            }).catch(err => {
+                console.error("Erro ao copiar: ", err);
+            });
+        }
+
+        // Animação de blocos caindo
+        window.onload = () => {
+            const blocks = document.querySelectorAll('.block');
+            blocks.forEach((block, index) => {
+                block.style.animationDelay = `${index * 0.1}s`;
+                block.classList.add('fall');
+            });
+        };
+    </script>
+</body>
+</html>

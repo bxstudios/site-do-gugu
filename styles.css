@@ -1,0 +1,137 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte moderna */
+    background-color: #343a40; /* Cinza escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+}
+
+.card {
+    background-color: white; /* Contêiner em branco */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    text-align: center;
+    width: 300px;
+    color: #212529; /* Texto escuro para contraste */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animação ao passar o mouse */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7); /* Sombra mais intensa ao passar o mouse */
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 3px solid white;
+    margin-bottom: 15px;
+    transition: transform 0.3s; /* Efeito na imagem */
+}
+
+.profile img:hover {
+    transform: rotate(15deg); /* Animação ao passar o mouse na imagem */
+}
+
+h1 {
+    margin: 10px 0;
+    font-size: 26px; /* Aumentar o tamanho da fonte */
+}
+
+.links {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+    margin: 0 10px;
+}
+
+.logo {
+    width: 40px; /* Ajuste o tamanho conforme necessário */
+    height: 40px; /* Ajuste o tamanho conforme necessário */
+    transition: transform 0.3s; /* Animação ao passar o mouse */
+}
+
+.logo:hover {
+    transform: scale(1.2); /* Efeito de aumento ao passar o mouse */
+}
+
+.bio {
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.contact {
+    text-align: center; /* Centralizar o texto */
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centralizar o conteúdo do email */
+    margin-bottom: 10px; /* Espaçamento entre as linhas de contato */
+    background-color: #f8f9fa; /* Fundo claro para a seção de email */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.email-icon {
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    color: #000; /* Cor do ícone */
+}
+
+.copy-button {
+    background: transparent; /* Fundo transparente */
+    border: none; /* Remover borda */
+    cursor: pointer; /* Cursor de ponteiro */
+    margin-left: 10px; /* Espaçamento entre o texto do email e o botão */
+    transition: transform 0.2s; /* Animação ao passar o mouse */
+}
+
+.copy-button:hover {
+    transform: scale(1.1); /* Aumentar levemente o botão ao passar o mouse */
+}
+
+.copy-icon {
+    width: 20px; /* Ajuste o tamanho conforme necessário */
+    height: 20px; /* Ajuste o tamanho conforme necessário */
+}
+
+.contact p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Animação de blocos caindo */
+.block {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+.fall {
+    animation: drop 0.6s forwards;
+}
+
+@keyframes drop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
