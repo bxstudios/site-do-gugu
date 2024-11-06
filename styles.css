@@ -1,126 +1,124 @@
+/* Estilos Gerais */
 body {
-    font-family: 'Roboto', sans-serif; /* Fonte moderna */
-    background-color: #343a40; /* Cinza escuro */
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(360deg, #0a0a0a, #3a0d0d);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    overflow: hidden;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-.container {
-    position: relative;
+/* Animações de Aparição */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Estilos do Card */
 .card {
-    background-color: white; /* Contêiner em branco */
-    border-radius: 15px;
+    background: #fff;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    padding: 25px;
+    padding: 30px;
     text-align: center;
-    width: 300px;
-    color: #212529; /* Texto escuro para contraste */
-    transition: transform 0.3s, box-shadow 0.3s; /* Animação ao passar o mouse */
+    width: 250px;
+    color: #000;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: slideUp 1s ease;
 }
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7); /* Sombra mais intensa ao passar o mouse */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
 }
 
+/* Estilos da Imagem de Perfil */
 .profile img {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    border: 3px solid white;
+    width: 120px;
+    height: 120px;
+    border: 4px solid #000;
     margin-bottom: 15px;
-    transition: transform 0.3s; /* Efeito na imagem */
+    transition: transform 0.4s, border 0.4s;
 }
 
 .profile img:hover {
-    transform: rotate(15deg); /* Animação ao passar o mouse na imagem */
+    transform: rotate(15deg) scale(1.05);
+    border-color: #ff4747;
 }
 
+/* Título e Texto */
 h1 {
     margin: 10px 0;
-    font-size: 26px; /* Aumentar o tamanho da fonte */
+    font-size: 28px;
+    color: #000;
 }
 
+p {
+    color: #000;
+}
+
+/* Links dos Ícones */
 .links {
-    margin: 15px 0;
+    margin: 20px 0;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Alinha todos os ícones ao centro */
+    align-items: center;
 }
 
 .link {
-    margin: 0 10px;
+    margin: 0 5px; /* Diminui o espaçamento entre os ícones */
+    animation: popIn 0.5s ease;
 }
 
+@keyframes popIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Estilos dos Ícones de Rede Social */
 .logo {
-    width: 40px; /* Ajuste o tamanho conforme necessário */
-    height: 40px; /* Ajuste o tamanho conforme necessário */
-    transition: transform 0.3s; /* Animação ao passar o mouse */
+    font-size: 2rem; /* Ajuste para ícones do Font Awesome */
+    color: #000;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .logo:hover {
-    transform: scale(1.2); /* Efeito de aumento ao passar o mouse */
+    transform: scale(1.2) rotate(10deg);
 }
 
+.youtube-icon {
+    color: #FF0000; /* Cor padrão do YouTube */
+}
+
+.discord-icon {
+    color: #5865F2; /* Cor padrão do Discord */
+}
+
+/* Bio */
 .bio {
-    margin: 10px 0;
+    margin: 15px 0;
     font-style: italic;
+    color: #000;
 }
 
-.contact {
-    text-align: center; /* Centralizar o texto */
-}
-
-.email {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centralizar o conteúdo do email */
-    margin-bottom: 10px; /* Espaçamento entre as linhas de contato */
-    background-color: #f8f9fa; /* Fundo claro para a seção de email */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 10px; /* Espaçamento interno */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra leve */
-}
-
-.email-icon {
-    margin-right: 8px; /* Espaço entre o ícone e o texto */
-    color: #000; /* Cor do ícone */
-}
-
-.copy-button {
-    background: transparent; /* Fundo transparente */
-    border: none; /* Remover borda */
-    cursor: pointer; /* Cursor de ponteiro */
-    margin-left: 10px; /* Espaçamento entre o texto do email e o botão */
-    transition: transform 0.2s; /* Animação ao passar o mouse */
-}
-
-.copy-button:hover {
-    transform: scale(1.1); /* Aumentar levemente o botão ao passar o mouse */
-}
-
-.copy-icon {
-    width: 20px; /* Ajuste o tamanho conforme necessário */
-    height: 20px; /* Ajuste o tamanho conforme necessário */
-}
-
-.contact p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-/* Animação de blocos caindo */
+/* Animação de Blocos */
 .block {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
 }
 
 .fall {
@@ -128,10 +126,6 @@ h1 {
 }
 
 @keyframes drop {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
 }
